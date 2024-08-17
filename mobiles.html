@@ -9,6 +9,342 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f2f3f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 55px;
+  background-color: #181818;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+header nav {
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+header .logo {
+  width: 150px;
+  height: auto;
+  margin: 7px 0;
+}
+
+header nav .nav-button {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.nav-button i {
+  font-size: 0.8rem;
+  margin-left: 3px;
+}
+
+.nav-button:hover {
+  color: #eb5733;
+  text-decoration: underline;
+}
+
+.head-search {
+  display: inline-flex;
+}
+
+.search-input {
+  flex: 1;
+  height: 30px;
+  font-size: 1.3rem;
+  color: rgb(46, 46, 46);
+  padding: 0px 0px 0px 8px;
+  border: none;
+  outline: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.search {
+  width: 40px;
+  height: 30px;
+  font-size: 1rem;
+  background-color: #c7c7c7;
+  color: white;
+  border: none;
+  outline: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: 0.5s;
+}
+
+.search:hover {
+  background-color: #eb5733;
+}
+
+/* card */
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+  background-color: #f2f3f5;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+/* .in-b {
+  display: inline-block;
+} */
+
+.title h1 {
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.title .bb {
+  font-size: 1.1rem;
+  margin-left: 2em;
+  color: #eb5733;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 15px;
+  padding: 0px 0px;
+  animation: cardani 0.3s ease-in;
+  animation-duration: 1s;
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  position: relative;
+  /* display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; */
+  background-color: #fff;
+  box-shadow: 0px 0px 18px #ccc;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 30px 10px;
+  border-radius: 5px;
+}
+
+.offer-float {
+  width: 55px;
+  height: auto;
+  margin: 0px auto;
+  padding: 5px 5px 5px 5px;
+  text-align: initial;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #72a02b;
+}
+
+.offer-float>h4 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.offer-float>P {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.card-img {
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin: 0px 0 10px 0;
+  line-height: 25px;
+  font-weight: 400;
+  color: #535353;
+}
+
+.fa-indian-rupee-sign {
+  font-size: 1rem;
+}
+
+.card-price {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  color: #eb5733;
+}
+
+.card-price span {
+  font-size: 0.75rem;
+  color: #404040;
+}
+
+.card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  color: #535353;
+  background-color: #cccccc5b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.7px;
+  transition: 0.5s;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  border: 1px solid #eb5733;
+  color: #fff;
+}
+
+.card:hover .card-body {
+  border: none;
+  background-color: #eb5733;
+  color: #fff;
+}
+
+
+@media all and (max-width:600px) {
+  header nav {
+    width: 90%;
+    padding-bottom: 20px;
+    justify-content: stretch;
+  }
+
+  header nav .nav-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  header nav .nav-button {
+    margin: 5px 0;
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+
+  header nav .nav-button:hover {
+    border: 1px solid #eb5733;
+    ;
+  }
+
+  .head-search {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 30px;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: self-start;
+  }
+
+  .title>span {
+    margin-left: 0em;
+    margin-top: 5px;
+
+  }
+}
+
+@media all and (max-width: 1200px) {
+  header {
+    width: 100%;
+    height: auto;
+    background-color: #181818;
+    position: sticky;
+    top: 0;
+
+  }
+
+  header nav {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  header nav .nav-button {
+    margin: 5px 0;
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+
+  .nav-button i {
+    font-size: 0.8rem;
+    margin-left: 7px;
+  }
+
+  .nav-button:hover {
+    color: #eb5733;
+    text-decoration: none;
+  }
+}
+
+/* animate */
+
+@keyframes cardani {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+</style>
 </head>
 
 <body>
